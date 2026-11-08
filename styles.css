@@ -1,0 +1,87 @@
+/* 01. DESIGN TOKENS */
+:root { --cream:#fbf8f4; --blush:#f2d8d6; --rose:#bd777c; --ink:#302b2a; --muted:#756a67; --border:#e8ddd7; --font-display:'Italiana',Georgia,serif; --font-body:'DM Sans',Arial,sans-serif; }
+/* 02. GLOBAL */
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:90px; }
+body { margin:0; background:var(--cream); color:var(--ink); font-family:var(--font-body); }
+a { color:inherit; text-decoration:none; }
+img { max-width:100%; display:block; }
+button { font:inherit; }
+.section-shell { width:min(1200px,calc(100% - 64px)); margin-inline:auto; }
+.section-pad { padding-block:105px; }
+.eyebrow { font-size:11px; letter-spacing:2.4px; font-weight:700; }
+h1,h2,h3,p { margin-top:0; }
+h1,h2 { font-family:var(--font-display); font-weight:400; letter-spacing:-1.5px; }
+h1 em,h2 em { color:var(--rose); font-weight:400; }
+/* 03. NAVIGATION */
+.demo-banner { background:var(--ink); color:white; text-align:center; padding:9px 15px; font-size:10px; letter-spacing:.8px; }
+.site-header { position:sticky; top:0; z-index:10; background:rgba(251,248,244,.96); backdrop-filter:blur(14px); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:18px max(32px,calc((100vw - 1200px)/2)); }
+.wordmark { font-family:var(--font-display); font-size:30px; white-space:nowrap; letter-spacing:-1px; }
+.wordmark span:not(.sparkle) { font-family:var(--font-body); font-size:11px; letter-spacing:1px; text-transform:uppercase; margin-left:3px; }
+.sparkle { color:var(--rose); margin-left:7px; }
+.nav-links { display:flex; align-items:center; gap:34px; font-size:12px; font-weight:600; }
+.nav-links a:hover { color:var(--rose); }
+.nav-cta { padding:12px 18px; border:1px solid var(--ink); border-radius:50px; }
+.menu-toggle { display:none; background:none; border:0; font-size:25px; cursor:pointer; }
+/* 04. HERO */
+.hero { display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:55px; min-height:660px; padding-block:72px 90px; }
+.hero .eyebrow { display:flex; align-items:center; gap:10px; }
+.dot { width:8px; height:8px; border-radius:50%; background:var(--rose); }
+h1 { font-size:clamp(70px,7.1vw,112px); line-height:.98; margin:29px 0; }
+.hero-copy>p { max-width:460px; line-height:1.9; font-size:15px; color:var(--muted); }
+.hero-actions,.booking-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:33px; }
+.button { display:inline-flex; justify-content:space-between; align-items:center; gap:28px; padding:17px 22px; font-size:12px; font-weight:700; border-radius:3px; transition:transform .2s; }
+.button:hover { transform:translateY(-3px); }
+.button-dark { color:white; background:var(--ink); }
+.button-outline { border:1px solid #b6a7a0; }
+.hero-note { margin-top:44px; font-size:12px; color:var(--rose); }
+.hero-visual { position:relative; max-width:490px; width:100%; justify-self:end; }
+.hero-image { height:510px; border-radius:220px 220px 15px 15px; overflow:hidden; background:#eac5c1; border:9px solid #f2dfd9; }
+.hero-image img { width:100%; height:100%; object-fit:cover; object-position:top center; }
+.hero-orbit { position:absolute; right:-28px; top:-26px; background:var(--rose); color:white; border-radius:50%; width:100px; height:100px; display:grid; place-items:center; padding:18px; text-align:center; font-size:11px; line-height:1.6; transform:rotate(16deg); z-index:2; }
+.floating-sticker { position:absolute; bottom:35px; left:-45px; background:var(--cream); border:1px solid var(--border); padding:22px 27px; font-size:15px; transform:rotate(-7deg); box-shadow:0 12px 25px #00000012; }
+.floating-sticker i { color:var(--rose); }
+/* 05. TICKER */
+.ticker { overflow:hidden; background:var(--blush); padding:17px 0; color:#75484a; font-size:11px; letter-spacing:3px; font-weight:700; white-space:nowrap; text-align:center; }
+/* 06. GALLERY */
+.section-top { display:flex; justify-content:space-between; align-items:end; gap:35px; margin-bottom:40px; }
+.section-top h2 { font-size:clamp(51px,6vw,78px); line-height:1.04; margin:17px 0 0; }
+.section-top>p { max-width:300px; color:var(--muted); font-size:13px; line-height:1.8; margin-bottom:8px; }
+.gallery-grid { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:18px; }
+.gallery-item { position:relative; margin:0; background:#f1dcd7; height:320px; overflow:hidden; }
+.gallery-item.large { grid-row:span 2; height:auto; }
+.gallery-item.wide { grid-column:span 2; }
+.gallery-item img { width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .4s; }
+.gallery-item:hover img { transform:scale(1.035); }
+.gallery-item figcaption { position:absolute; bottom:0; left:0; right:0; display:flex; justify-content:space-between; padding:35px 18px 16px; color:white; font-size:12px; background:linear-gradient(transparent,#241f1dbb); }
+.gallery-caption { margin-top:20px; font-size:11px; color:var(--muted); }
+/* 07. SERVICES */
+.services { background:#f5e9e4; }
+.service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.service-card { background:var(--cream); padding:28px; min-height:320px; display:flex; flex-direction:column; }
+.service-number { font-size:11px; color:var(--rose); letter-spacing:2px; }
+.service-icon { font-size:40px; color:var(--rose); margin:18px 0; }
+.service-card h3 { font-family:var(--font-display); font-size:34px; font-weight:400; margin-bottom:10px; }
+.service-card p { font-size:13px; line-height:1.8; color:var(--muted); }
+.service-card a { margin-top:auto; font-size:12px; font-weight:700; border-bottom:1px solid var(--ink); width:max-content; padding-bottom:6px; }
+.tier-panel { margin-top:22px; background:#ead1cb; padding:35px 50px; display:grid; grid-template-columns:1fr 240px; gap:35px; align-items:center; }
+.tier-panel h3 { font-family:var(--font-display); font-weight:400; font-size:42px; margin:17px 0; }
+.tier-panel p { line-height:1.8; font-size:14px; }
+.tier-panel small { color:#765d58; line-height:1.7; display:block; }
+.tier-panel img { height:260px; width:100%; object-fit:contain; }
+/* 08. BOOKING */
+.booking-card { position:relative; background:#f0d6d0; text-align:center; padding:85px 30px; overflow:hidden; }
+.booking-card h2 { font-size:clamp(58px,7vw,93px); line-height:1.02; margin:20px 0; }
+.booking-card>p { max-width:510px; margin:auto; font-size:14px; line-height:1.9; color:#6b5552; }
+.booking-actions { justify-content:center; }
+.booking-decoration { position:absolute; right:8%; top:12%; font-size:90px; color:#c58e8c; opacity:.55; }
+.booking-disclaimer { max-width:500px; margin:22px auto 0; color:#785e59; font-size:10px; line-height:1.7; }
+/* 09. FOOTER */
+.footer { padding-block:45px 24px; }
+.footer>p { margin:12px 0 55px; font-size:12px; color:var(--muted); }
+.footer-bottom { border-top:1px solid var(--border); padding-top:20px; display:flex; justify-content:space-between; gap:20px; font-size:11px; color:var(--muted); }
+.footer-bottom a { text-decoration:underline; }
+/* 10. RESPONSIVE */
+@media(max-width:900px) { .hero { gap:25px; } h1 { font-size:70px; } .hero-image { height:440px; } .gallery-grid { grid-template-columns:1fr 1fr; } .gallery-item.large { grid-row:auto; height:320px; } .gallery-item.wide { grid-column:span 2; } }
+@media(max-width:680px) { .section-shell { width:calc(100% - 36px); } .section-pad { padding-block:70px; } .site-header { padding:15px 18px; } .wordmark { font-size:25px; } .menu-toggle { display:block; } .nav-links { display:none; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:1px solid var(--border); padding:22px; flex-direction:column; align-items:stretch; gap:20px; } .nav-links.is-open { display:flex; } .hero { grid-template-columns:1fr; padding-block:65px; } h1 { font-size:clamp(62px,13vw,85px); } .hero-visual { justify-self:center; max-width:390px; margin-top:35px; } .hero-image { height:430px; } .hero-orbit { right:-6px; } .floating-sticker { left:-7px; } .section-top { display:block; } .section-top>p { margin-top:20px; } .gallery-grid { gap:10px; } .gallery-item,.gallery-item.large { height:260px; } .gallery-item.wide { height:290px; } .service-grid { grid-template-columns:1fr; } .service-card { min-height:250px; } .tier-panel { padding:25px; grid-template-columns:1fr; } .tier-panel img { height:350px; } .booking-card { padding:65px 18px; } .booking-decoration { font-size:50px; } .footer-bottom { flex-direction:column; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; animation:none!important; } }
